@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TextSummary
 {
@@ -10,6 +7,10 @@ namespace TextSummary
     {
         static void Main(string[] args)
         {
+            var sentence = "The quick brown fox jumps over the lazy dog.";
+            Console.WriteLine(StringUtility.SummarizeText(sentence,25));
         }
+
+
     }
 }
