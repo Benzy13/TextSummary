@@ -9,7 +9,6 @@ namespace TextSummary
             string sentence = "The QUICK brown fox jumps over the lazy dog.";
             Console.WriteLine(StringUtility.SummarizeText(sentence,25));
             Console.WriteLine(StringUtility.PascalCase(sentence));
-
         }
 
 
