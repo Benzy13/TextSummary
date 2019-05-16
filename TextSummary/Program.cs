@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace TextSummary
 {
@@ -7,8 +6,10 @@ namespace TextSummary
     {
         static void Main(string[] args)
         {
-            var sentence = "The quick brown fox jumps over the lazy dog.";
+            string sentence = "The QUICK brown fox jumps over the lazy dog.";
             Console.WriteLine(StringUtility.SummarizeText(sentence,25));
+            Console.WriteLine(StringUtility.PascalCase(sentence));
+
         }
 
 

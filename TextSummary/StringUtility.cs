@@ -1,21 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
+using System.Threading;
+
 
 namespace TextSummary
 {
     public class StringUtility
     {
+        //--------------------------------
         public static string SummarizeText(string text, int maxLength = 30)
         {
             if (text.Length < maxLength)
                 return text;
 
-            var words = text.Split(' ');
-            var totalChars = 0;
-            var summaryWords = new List<string>();
+            string[] words = text.Split(' ');
+            int totalChars = 0;
+            List<string> summaryWords = new List<string>();
 
             foreach (var word in words)
             {
@@ -25,6 +26,20 @@ namespace TextSummary
                     break;
             }
             return String.Join(" ", summaryWords) + "...";
+        }
+        //--------------------------------
+        public static string PascalCase(string text)
+        {
+            CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+            TextInfo textInfo = cultureInfo.TextInfo;
+            string[] words = text.Split(' ');
+            List<string> pascalWords = new List<string>();
+
+            foreach (var word in words)
+            {
+                pascalWords.Add(textInfo.ToTitleCase(word.ToLower()));
+            }
+            return String.Join("", pascalWords);
         }
     }
 }
